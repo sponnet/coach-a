@@ -6,8 +6,6 @@ on:
 
 jobs:
   solve:
-    # Only run when the issue has the 'claude' label
-    if: contains(github.event.issue.labels.*.name, 'claude')
     runs-on: ubuntu-latest
     permissions:
       contents: write
