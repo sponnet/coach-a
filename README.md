@@ -17,7 +17,6 @@ A minimal Claude Code starter for a Larry-orchestrated AI team. Use this templat
 | `team/Pax - Senior Researcher/AGENTS.md` | Pax's full persona contract. |
 | `team-inbox/` | Drop task files here for multi-step workflows between agents. |
 | `projects/` | One subfolder per project. Each must have a `public/` subfolder. |
-| `.github/workflows/claude-issue-to-pr.yml` | GitHub Action that lets `@claude` in issues and comments trigger Claude Code. |
 
 ## Prerequisites
 
@@ -45,20 +44,7 @@ cd my-ai-team
 
 ---
 
-## Step 2 — Add your Anthropic API key (for the GitHub Action)
-
-The included workflow (`.github/workflows/claude-issue-to-pr.yml`) uses Claude Code in CI so that `@claude` mentions in issues and PR comments trigger the agent automatically.
-
-1. In your new repo, go to **Settings → Secrets and variables → Actions**.
-2. Click **"New repository secret"**.
-3. Name: `ANTHROPIC_API_KEY` — Value: your key from [console.anthropic.com](https://console.anthropic.com).
-4. Save.
-
-Without this secret the GitHub Action will fail silently; the local Claude Code workflow still works fine.
-
----
-
-## Step 3 — Open in Claude Code and start working
+## Step 2 — Open in Claude Code and start working
 
 ```bash
 # If you didn't clone yet
@@ -94,18 +80,6 @@ Example prompts:
 > "I need someone who can help me with my garden."
 > "Hire a frontend developer who can build dashboards."
 > "I need a dietitian to help me plan weekly menus."
-
-### Using `@claude` in GitHub issues
-
-Once your `ANTHROPIC_API_KEY` secret is set, you can trigger the agent from any issue or PR comment by including `@claude` in the body:
-
-- **New issue** — mention `@claude` anywhere in the issue body; the workflow runs on open.
-- **Issue comment** — add a comment containing `@claude`; the workflow runs on comment creation.
-- **PR review comment** — same trigger works on pull request review comments.
-
-The agent will push commits or open a PR based on what the issue asks.
-
----
 
 ## Starting a new project
 
